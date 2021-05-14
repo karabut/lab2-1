@@ -14,19 +14,6 @@ public enum Direction {
      */
     public static Pair convertDirectionToDelta(Direction dir) {
         int dx = 0, dy = 0;
-//        if (dir != null) {
-//            if(dir == UP){
-//                dy = -1;
-//            }
-//            if(dir == DOWN){
-//                dy = 1;
-//            }
-//            if(dir == LEFT){
-//                dx = -1;
-//            }
-//            if(dir == RIGHT){
-//                dx = 1;
-//            }
                 switch (dir) {
                 case UP -> dy = -1;
                 case DOWN -> dy = 1;
@@ -34,20 +21,6 @@ public enum Direction {
                 case RIGHT -> dx = 1;
             }
 
-//            switch (dir){
-//                case UP:
-//                    dy = -1;
-//                    break;
-//                case DOWN:
-//                    dy = 1;
-//                    break;
-//                case LEFT:
-//                    dx = -1;
-//                    break;
-//                case RIGHT:
-//                    dx = 1;
-//                    break;
-//        }
         return new Pair(dx, dy);
     }
 
@@ -57,21 +30,6 @@ public enum Direction {
      * @return direction
      */
     public static Direction convertCharacterToDirection(char ch) {
-
-//        if(ch == 'U'){
-//            return UP;
-//        }
-//        if(ch == 'D'){
-//            return DOWN;
-//        }
-//        if(ch == 'L'){
-//            return LEFT;
-//        }
-//        if(ch == 'R'){
-//            return RIGHT;
-//        }
-//
-//        return UNKNOWN;
 
 
 

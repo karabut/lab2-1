@@ -7,7 +7,7 @@ public interface Command {
      * @param args arguments of command
      * @return true if arguments are valid
      */
-    boolean validateArgs(String[] args);
+    boolean checkArgs(String[] args);
 
     /**
      * Executes command
@@ -15,5 +15,5 @@ public interface Command {
      * @param args arguments of command
      * @return true if command was executed successfully
      */
-    boolean execute(String[] args);
+    boolean run(String[] args);
 }

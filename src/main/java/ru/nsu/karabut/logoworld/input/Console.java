@@ -5,8 +5,8 @@ import ru.nsu.karabut.logoworld.exceptions.InvalidInputException;
 
 import java.util.Scanner;
 
-public class ConsoleInput implements Input {
-    private static final Logger logger = Logger.getLogger(ConsoleInput.class);
+public class Console implements Input {
+    private static final Logger logger = Logger.getLogger(Console.class);
 
     private final Scanner scanner;
     private String prevCommand;
@@ -14,7 +14,7 @@ public class ConsoleInput implements Input {
     /**
      * Initialize input from console
      */
-    public ConsoleInput() {
+    public Console() {
         logger.debug("Console Input initialized.");
         scanner = new Scanner(System.in);
         prevCommand = "";

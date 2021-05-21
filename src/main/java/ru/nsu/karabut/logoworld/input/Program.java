@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProgramInput implements Input {
-    private static final Logger logger = Logger.getLogger(ProgramInput.class);
+public class Program implements Input {
+    private static final Logger logger = Logger.getLogger(Program.class);
 
     private int curCommand = 0;
     private final List<String> commandsOrder = new ArrayList<>();
@@ -21,7 +21,7 @@ public class ProgramInput implements Input {
      * @param fileName file name which contains program
      * @throws FileNotFoundException file not found
      */
-    public ProgramInput(String fileName) throws FileNotFoundException {
+    public Program(String fileName) throws FileNotFoundException {
         logger.debug("Loading program: " + fileName + " ...");
         Scanner scanner = new Scanner(new FileInputStream(fileName));
         while (scanner.hasNext()) {

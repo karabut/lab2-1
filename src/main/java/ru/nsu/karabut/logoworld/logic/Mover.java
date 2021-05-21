@@ -3,7 +3,7 @@ package ru.nsu.karabut.logoworld.logic;
 import ru.nsu.karabut.logoworld.math.Direction;
 import ru.nsu.karabut.logoworld.math.Pair;
 
-public class Turtle {
+public class Mover {
     private int x;
     private int y;
     private boolean isDrawing;
@@ -11,7 +11,7 @@ public class Turtle {
     /**
      * Create turtle
      */
-    public Turtle() {
+    public Mover() {
         this.isDrawing = false;
     }
 
@@ -25,7 +25,7 @@ public class Turtle {
     }
 
     /**
-     * Set drawing staet of turtle
+     * Set drawing state of turtle
      *
      * @param isDrawing new drawing state
      */

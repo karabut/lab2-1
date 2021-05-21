@@ -4,19 +4,19 @@ import ru.nsu.karabut.logoworld.input.Input;
 import ru.nsu.karabut.logoworld.logic.World;
 import ru.nsu.karabut.logoworld.math.Pair;
 
-public class TeleportCommand implements Command {
+public class Teleport implements Command {
     private final World world;
     private final Input input;
     private int steps;
 
-    public TeleportCommand(Input input, World world) {
+    public Teleport(Input input, World world) {
         this.input = input;
         this.world = world;
         this.steps = 0;
     }
 
     @Override
-    public boolean validateArgs(String[] args) {
+    public boolean checkArgs(String[] args) {
         if (args.length != 2) {
             CommandError.setError("Wrong number of arguments. Use TELEPORT <x> <y>");
             return false;
@@ -44,7 +44,7 @@ public class TeleportCommand implements Command {
     }
 
     @Override
-    public boolean execute(String[] args) {
+    public boolean run(String[] args) {
         if (steps >= 1 || !world.isValid()) {
             steps = 0;
             if (input.allowJump()) {

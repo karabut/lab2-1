@@ -8,7 +8,7 @@ import ru.nsu.karabut.logoworld.drawing.SwingView;
 import ru.nsu.karabut.logoworld.exceptions.CommandFactoryException;
 import ru.nsu.karabut.logoworld.exceptions.InvalidInputException;
 import ru.nsu.karabut.logoworld.exceptions.RenderException;
-import ru.nsu.karabut.logoworld.logic.Interpreter;
+import ru.nsu.karabut.logoworld.logic.Interp;
 import ru.nsu.karabut.logoworld.logic.World;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class LogoWorld {
 
     private final World world;
     private final GraphicsView graphicsView;
-    private final Interpreter interpreter;
+    private final Interp interp;
 
     /**
      * Create Logo World instance.
@@ -33,7 +33,7 @@ public class LogoWorld {
         logger.debug("Logo World initialization...");
 
         world = new World();
-        interpreter = new Interpreter(programFileName, world);
+        interp = new Interp(programFileName, world);
         if (useSwing) {
             graphicsView = new SwingView();
         }
@@ -51,9 +51,9 @@ public class LogoWorld {
      */
     public void run() throws CommandFactoryException, RenderException, RuntimeException {
         try {
-            while (!interpreter.isFinished()) {
-                if (interpreter.parseNextCommand()) {
-                    while (interpreter.step()) {
+            while (!interp.isFinished()) {
+                if (interp.parseNextCommand()) {
+                    while (interp.step()) {
                         graphicsView.render(world);
                         try {
                             Thread.sleep(300);
@@ -67,7 +67,7 @@ public class LogoWorld {
                     String error = CommandError.getError();
                     logger.debug(error);
                     graphicsView.writeInformation(error);
-                    if (interpreter.shouldAskForContinuation() && !graphicsView.getContinuationSignal()) {
+                    if (interp.shouldAskForContinuation() && !graphicsView.getContinuationSignal()) {
                         break;
                     }
                 }

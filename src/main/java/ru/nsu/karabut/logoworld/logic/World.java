@@ -7,7 +7,7 @@ import ru.nsu.karabut.logoworld.math.Pair;
 public class World {
     private static final Logger logger = Logger.getLogger(World.class);
 
-    private final Turtle turtle;
+    private final Mover mover;
     private final Field field;
 
     /**
@@ -16,7 +16,7 @@ public class World {
     public World() {
         logger.debug("World initialization.");
         this.field = new Field();
-        this.turtle = new Turtle();
+        this.mover = new Mover();
     }
 
     /**
@@ -30,7 +30,7 @@ public class World {
     public void initWorld(int width, int height, int x, int y) {
         logger.debug("Initializing world parameters: " + width + " " + height + " " + x + " " + y);
         field.setSize(width, height);
-        turtle.setPosition(x, y);
+        mover.setPosition(x, y);
     }
 
     /**
@@ -40,7 +40,7 @@ public class World {
      * @see World#setIsTurtleDrawing(boolean)
      */
     public boolean getIsTurtleDrawing() {
-        return turtle.getIsDrawing();
+        return mover.getIsDrawing();
     }
 
     /**
@@ -51,7 +51,7 @@ public class World {
      */
     public void setIsTurtleDrawing(boolean isDrawing) {
         logger.debug("Switch turtle drawing mode");
-        turtle.setIsDrawing(isDrawing);
+        mover.setIsDrawing(isDrawing);
         update();
     }
 
@@ -63,7 +63,7 @@ public class World {
      */
     public void setTurtlePosition(int x, int y) {
         logger.debug("Set turtle position: " + x + " " + y);
-        turtle.setPosition(x, y);
+        mover.setPosition(x, y);
         update();
     }
 
@@ -74,7 +74,7 @@ public class World {
      */
     public void moveTurtle(Direction dir) {
         logger.debug("Move turtle in direction " + dir.toString());
-        turtle.move(dir);
+        mover.move(dir);
         update();
     }
 
@@ -94,7 +94,7 @@ public class World {
      * @return (x, y) - turtle position
      */
     public Pair getTurtlePosition() {
-        return turtle.getPosition();
+        return mover.getPosition();
     }
 
     /**
@@ -118,7 +118,7 @@ public class World {
     }
 
     private void update() {
-        Pair pos = turtle.getPosition();
+        Pair pos = mover.getPosition();
         Pair size = field.getSize();
         int x = pos.getFirst(), y = pos.getSecond();
 
@@ -128,9 +128,9 @@ public class World {
         while (x < 0) x += size.getFirst();
         while (x >= size.getFirst()) x -= size.getFirst();
 
-        turtle.setPosition(x, y);
+        mover.setPosition(x, y);
 
-        if (turtle.getIsDrawing()) {
+        if (mover.getIsDrawing()) {
             field.setDrawn(x, y, true);
         }
     }

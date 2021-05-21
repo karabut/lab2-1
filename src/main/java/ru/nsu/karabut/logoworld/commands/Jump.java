@@ -8,20 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class IfJmpCommand implements Command {
+public class Jump implements Command {
     private final Input input;
     private final World world;
 
     private boolean lastConditionState = false;
     private int nextCommand = 0;
 
-    public IfJmpCommand(Input input, World world) {
+    public Jump(Input input, World world) {
         this.input = input;
         this.world = world;
     }
 
     @Override
-    public boolean validateArgs(String[] args) {
+    public boolean checkArgs(String[] args) {
         if (args.length != 2) {
             CommandError.setError("Wrong number of arguments! Use IF_JMP (condition) <dest>");
             return false;
@@ -46,7 +46,7 @@ public class IfJmpCommand implements Command {
     }
 
     @Override
-    public boolean execute(String[] args) {
+    public boolean run(String[] args) {
         if (input.allowJump()) {
             input.setNextCommand(lastConditionState ? nextCommand : null);
         }

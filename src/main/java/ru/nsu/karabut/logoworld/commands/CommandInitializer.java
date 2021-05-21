@@ -3,19 +3,19 @@ package ru.nsu.karabut.logoworld.commands;
 import ru.nsu.karabut.logoworld.input.Input;
 import ru.nsu.karabut.logoworld.logic.World;
 
-public class InitCommand implements Command {
+public class CommandInitializer implements Command {
     private final World world;
     private final Input input;
     private int steps;
 
-    public InitCommand(Input input, World world) {
+    public CommandInitializer(Input input, World world) {
         this.input = input;
         this.world = world;
         this.steps = 0;
     }
 
     @Override
-    public boolean validateArgs(String[] args) {
+    public boolean checkArgs(String[] args) {
         if (args.length != 4) {
             CommandError.setError("Wrong number of arguments. Use INIT <width> <height> <x> <y>");
             return false;
@@ -38,7 +38,7 @@ public class InitCommand implements Command {
     }
 
     @Override
-    public boolean execute(String[] args) {
+    public boolean run(String[] args) {
         if (steps >= 1) {
             steps = 0;
             if (input.allowJump()) input.setNextCommand(null);

@@ -4,9 +4,9 @@ import ru.nsu.karabut.logoworld.commands.Command;
 import ru.nsu.karabut.logoworld.commands.CommandFactory;
 import ru.nsu.karabut.logoworld.exceptions.CommandFactoryException;
 import ru.nsu.karabut.logoworld.exceptions.InvalidInputException;
-import ru.nsu.karabut.logoworld.input.ConsoleInput;
+import ru.nsu.karabut.logoworld.input.Console;
 import ru.nsu.karabut.logoworld.input.Input;
-import ru.nsu.karabut.logoworld.input.ProgramInput;
+import ru.nsu.karabut.logoworld.input.Program;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Interpreter {
-    private static final Logger logger = Logger.getLogger(Interpreter.class);
+public class Interp {
+    private static final Logger logger = Logger.getLogger(Interp.class);
 
     private String curCmd = "";
     private String[] curArgs = null;
@@ -27,14 +27,14 @@ public class Interpreter {
      *
      * @throws IOException if commands-properties file or program file are not found or invalid
      */
-    public Interpreter(String programFileName, World world) throws IOException {
+    public Interp(String programFileName, World world) throws IOException {
         logger.debug("Interpreter initialization.");
 
         if (programFileName == null) {
-            this.input = new ConsoleInput();
+            this.input = new Console();
         }
         else {
-            this.input = new ProgramInput(programFileName);
+            this.input = new Program(programFileName);
         }
         this.commandFactory = new CommandFactory(input, world);
     }
@@ -44,7 +44,7 @@ public class Interpreter {
      *
      * @return true if command is parsed successfully and is valid.
      * @throws CommandFactoryException if command factory fails
-     * @see Interpreter#step()
+     * @see Interp#step()
      */
     public boolean parseNextCommand() throws CommandFactoryException, InvalidInputException {
         String command = input.nextCommand();
@@ -62,7 +62,7 @@ public class Interpreter {
             curArgs = Arrays.copyOfRange(cmd, 1, cmd.length);
             Command instance = commandFactory.getCommand(curCmd);
             if (instance != null) {
-                validArgs = instance.validateArgs(curArgs);
+                validArgs = instance.checkArgs(curArgs);
             }
             else {
                 validArgs = false;
@@ -78,7 +78,7 @@ public class Interpreter {
      *
      * @return true if stepped successfully
      * @throws CommandFactoryException if commands factory fails
-     * @see Interpreter#parseNextCommand()
+     * @see Interp#parseNextCommand()
      */
     public boolean step() throws CommandFactoryException {
         if (curCmd.equals("")) {
@@ -90,7 +90,7 @@ public class Interpreter {
         logger.debug("Stepping through command...");
         Command instance = commandFactory.getCommand(curCmd);
         if (instance != null) {
-            return instance.execute(curArgs);
+            return instance.run(curArgs);
         }
         else return false;
     }
@@ -110,7 +110,7 @@ public class Interpreter {
      * @return true if you are running program
      */
     public boolean shouldAskForContinuation() {
-        return input instanceof ProgramInput;
+        return input instanceof Program;
     }
 
     private String[] tokenizeCommand(String command) {

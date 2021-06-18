@@ -1,5 +1,4 @@
 package ru.nsu.karabut.logoworld.commands;
-
 import ru.nsu.karabut.logoworld.input.Input;
 import ru.nsu.karabut.logoworld.logic.World;
 

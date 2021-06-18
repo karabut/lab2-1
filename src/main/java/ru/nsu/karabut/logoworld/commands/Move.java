@@ -29,7 +29,7 @@ public class Move implements Command {
             CommandError.setError("Wrong direction value. It has to be U, D, L, or R!");
             return false;
         }
-        if (Direction.convertCharacterToDirection(args[0].charAt(0)) == Direction.UNKNOWN)  {
+        if (Direction.fromSymbol(args[0].charAt(0)) == Direction.UNKNOWN)  {
             CommandError.setError("Cannot interpret given direction!");
             return false;
         }
@@ -54,7 +54,7 @@ public class Move implements Command {
         steps++;
         int moveCount = Integer.parseInt(args[1]);
         for (int i = 0; i < moveCount; i++) {
-            world.moveTurtle(Direction.convertCharacterToDirection(args[0].charAt(0)));
+            world.moveTurtle(Direction.fromSymbol(args[0].charAt(0)));
         }
         return true;
     }

@@ -1,27 +1,18 @@
 package ru.nsu.karabut.logoworld.math;
 
 public enum Direction {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT,
-    UNKNOWN;
+    UP(0, -1),
+    DOWN(0, 1),
+    LEFT(-1, 0),
+    RIGHT(1, 0),
+    UNKNOWN(0, 0);
 
-    /**
-     * Converts given direction to delta vector
-     * @param dir direction to be converted
-     * @return pair
-     */
-    public static Pair convertDirectionToDelta(Direction dir) {
-        int dx = 0, dy = 0;
-                switch (dir) {
-                case UP -> dy = -1;
-                case DOWN -> dy = 1;
-                case LEFT -> dx = -1;
-                case RIGHT -> dx = 1;
-            }
+    public int dx;
+    public int dy;
 
-        return new Pair(dx, dy);
+    Direction(int dx, int dy) {
+        this.dx = dx;
+        this.dy = dy;
     }
 
     /**
@@ -29,10 +20,7 @@ public enum Direction {
      * @param ch character
      * @return direction
      */
-    public static Direction convertCharacterToDirection(char ch) {
-
-
-
+    public static Direction fromSymbol(char ch) {
         return switch(ch) {
             case 'U' -> UP;
             case 'D' -> DOWN;
@@ -40,7 +28,5 @@ public enum Direction {
             case 'R' -> RIGHT;
             default -> UNKNOWN;
         };
-
-
     }
 }

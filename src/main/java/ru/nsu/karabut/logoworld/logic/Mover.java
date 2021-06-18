@@ -50,9 +50,8 @@ public class Mover {
      * @param dir direction
      */
     public void move(Direction dir) {
-        Pair delta = Direction.convertDirectionToDelta(dir);
-        this.x += delta.getFirst();
-        this.y += delta.getSecond();
+        this.x += dir.dx;
+        this.y += dir.dy;
     }
 
     /**

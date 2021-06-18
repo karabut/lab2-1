@@ -3,8 +3,6 @@ package ru.nsu.karabut.logoworld;
 import org.apache.log4j.Logger;
 import ru.nsu.karabut.logoworld.commands.CommandError;
 import ru.nsu.karabut.logoworld.drawing.ConsoleView;
-import ru.nsu.karabut.logoworld.drawing.GraphicsView;
-import ru.nsu.karabut.logoworld.drawing.SwingView;
 import ru.nsu.karabut.logoworld.exceptions.CommandFactoryException;
 import ru.nsu.karabut.logoworld.exceptions.InvalidInputException;
 import ru.nsu.karabut.logoworld.exceptions.RenderException;
@@ -18,28 +16,22 @@ public class LogoWorld {
     private static final Logger logger = Logger.getLogger(LogoWorld.class);
 
     private final World world;
-    private final GraphicsView graphicsView;
+    private final ConsoleView graphicsView;
     private final Interp interp;
 
     /**
      * Create Logo World instance.
      *
      * @param programFileName Program to run. Use <b>null</b> if you want to type commands manually.
-     * @param useSwing        Render in swing window, if true. Otherwise render in console.
      * @throws IOException     If program file, commands-properties file are missing
      * @throws RenderException If console uses wrong sizes of textures
      */
-    public LogoWorld(String programFileName, boolean useSwing) throws IOException, RenderException {
+    public LogoWorld(String programFileName) throws IOException, RenderException {
         logger.debug("Logo World initialization...");
 
         world = new World();
         interp = new Interp(programFileName, world);
-        if (useSwing) {
-            graphicsView = new SwingView();
-        }
-        else {
-            graphicsView = new ConsoleView();
-        }
+        graphicsView = new ConsoleView();
     }
 
     /**

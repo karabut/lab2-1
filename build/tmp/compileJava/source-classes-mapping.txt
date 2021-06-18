@@ -1,57 +1,52 @@
-ru/nsu/karabut/logoworld/exceptions/RenderException.java
- ru.nsu.karabut.logoworld.exceptions.RenderException
 ru/nsu/karabut/logoworld/drawing/Texture.java
  ru.nsu.karabut.logoworld.drawing.Texture
-ru/nsu/karabut/logoworld/drawing/SwingView.java
- ru.nsu.karabut.logoworld.drawing.SwingView
-ru/nsu/karabut/logoworld/math/Direction.java
- ru.nsu.karabut.logoworld.math.Direction
- ru.nsu.karabut.logoworld.math.Direction$1
+ru/nsu/karabut/logoworld/exceptions/RenderException.java
+ ru.nsu.karabut.logoworld.exceptions.RenderException
+ru/nsu/karabut/logoworld/input/Input.java
+ ru.nsu.karabut.logoworld.input.Input
+ru/nsu/karabut/logoworld/math/Pair.java
+ ru.nsu.karabut.logoworld.math.Pair
+ru/nsu/karabut/logoworld/exceptions/InvalidConditionException.java
+ ru.nsu.karabut.logoworld.exceptions.InvalidConditionException
+ru/nsu/karabut/logoworld/commands/Command.java
+ ru.nsu.karabut.logoworld.commands.Command
+ru/nsu/karabut/logoworld/Main.java
+ ru.nsu.karabut.logoworld.Main
+ru/nsu/karabut/logoworld/input/Console.java
+ ru.nsu.karabut.logoworld.input.Console
+ru/nsu/karabut/logoworld/input/Program.java
+ ru.nsu.karabut.logoworld.input.Program
 ru/nsu/karabut/logoworld/logic/Field.java
  ru.nsu.karabut.logoworld.logic.Field
-ru/nsu/karabut/logoworld/logic/World.java
- ru.nsu.karabut.logoworld.logic.World
+ru/nsu/karabut/logoworld/LogoWorld.java
+ ru.nsu.karabut.logoworld.LogoWorld
 ru/nsu/karabut/logoworld/commands/CommandError.java
  ru.nsu.karabut.logoworld.commands.CommandError
 ru/nsu/karabut/logoworld/exceptions/CommandFactoryException.java
  ru.nsu.karabut.logoworld.exceptions.CommandFactoryException
-ru/nsu/karabut/logoworld/Main.java
- ru.nsu.karabut.logoworld.Main
-ru/nsu/karabut/logoworld/input/Input.java
- ru.nsu.karabut.logoworld.input.Input
-ru/nsu/karabut/logoworld/drawing/GraphicsView.java
- ru.nsu.karabut.logoworld.drawing.GraphicsView
-ru/nsu/karabut/logoworld/logic/Turtle.java
- ru.nsu.karabut.logoworld.logic.Turtle
-ru/nsu/karabut/logoworld/math/Pair.java
- ru.nsu.karabut.logoworld.math.Pair
-ru/nsu/karabut/logoworld/input/ConsoleInput.java
- ru.nsu.karabut.logoworld.input.ConsoleInput
-ru/nsu/karabut/logoworld/exceptions/InvalidConditionException.java
- ru.nsu.karabut.logoworld.exceptions.InvalidConditionException
-ru/nsu/karabut/logoworld/drawing/ConsoleView.java
- ru.nsu.karabut.logoworld.drawing.ConsoleView
 ru/nsu/karabut/logoworld/exceptions/InvalidInputException.java
  ru.nsu.karabut.logoworld.exceptions.InvalidInputException
-ru/nsu/karabut/logoworld/input/ProgramInput.java
- ru.nsu.karabut.logoworld.input.ProgramInput
-ru/nsu/karabut/logoworld/commands/CommandFactory.java
- ru.nsu.karabut.logoworld.commands.CommandFactory
-ru/nsu/karabut/logoworld/logic/Interpreter.java
- ru.nsu.karabut.logoworld.logic.Interpreter
-ru/nsu/karabut/logoworld/commands/Command.java
- ru.nsu.karabut.logoworld.commands.Command
-ru/nsu/karabut/logoworld/commands/Draw.java
- ru.nsu.karabut.logoworld.commands.Draw
-ru/nsu/karabut/logoworld/commands/WardCommand.java
- ru.nsu.karabut.logoworld.commands.WardCommand
-ru/nsu/karabut/logoworld/LogoWorld.java
- ru.nsu.karabut.logoworld.LogoWorld
 ru/nsu/karabut/logoworld/commands/CommandInitializer.java
  ru.nsu.karabut.logoworld.commands.CommandInitializer
 ru/nsu/karabut/logoworld/commands/Move.java
  ru.nsu.karabut.logoworld.commands.Move
+ru/nsu/karabut/logoworld/commands/CommandFactory.java
+ ru.nsu.karabut.logoworld.commands.CommandFactory
 ru/nsu/karabut/logoworld/commands/Jump.java
  ru.nsu.karabut.logoworld.commands.Jump
+ru/nsu/karabut/logoworld/commands/Draw.java
+ ru.nsu.karabut.logoworld.commands.Draw
+ru/nsu/karabut/logoworld/commands/Ward.java
+ ru.nsu.karabut.logoworld.commands.Ward
+ru/nsu/karabut/logoworld/logic/Interp.java
+ ru.nsu.karabut.logoworld.logic.Interp
 ru/nsu/karabut/logoworld/commands/Teleport.java
  ru.nsu.karabut.logoworld.commands.Teleport
+ru/nsu/karabut/logoworld/logic/World.java
+ ru.nsu.karabut.logoworld.logic.World
+ru/nsu/karabut/logoworld/math/Direction.java
+ ru.nsu.karabut.logoworld.math.Direction
+ru/nsu/karabut/logoworld/logic/Mover.java
+ ru.nsu.karabut.logoworld.logic.Mover
+ru/nsu/karabut/logoworld/drawing/ConsoleView.java
+ ru.nsu.karabut.logoworld.drawing.ConsoleView

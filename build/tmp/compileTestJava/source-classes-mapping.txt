@@ -1,12 +1,12 @@
-ru/nsu/karabut/logoworld/commands/MoveCommandTest.java
- ru.nsu.karabut.logoworld.commands.MoveCommandTest
-ru/nsu/karabut/logoworld/commands/TeleportCommandTest.java
- ru.nsu.karabut.logoworld.commands.TeleportCommandTest
-ru/nsu/karabut/logoworld/commands/WardCommandTest.java
- ru.nsu.karabut.logoworld.commands.WardCommandTest
-ru/nsu/karabut/logoworld/commands/DrawCommandTest.java
- ru.nsu.karabut.logoworld.commands.DrawCommandTest
-ru/nsu/karabut/logoworld/commands/InitCommandTest.java
- ru.nsu.karabut.logoworld.commands.InitCommandTest
-ru/nsu/karabut/logoworld/commands/IfJmpCommandTest.java
- ru.nsu.karabut.logoworld.commands.IfJmpCommandTest
+ru/nsu/karabut/logoworld/commands/DrawTest.java
+ ru.nsu.karabut.logoworld.commands.DrawTest
+ru/nsu/karabut/logoworld/commands/WardTest.java
+ ru.nsu.karabut.logoworld.commands.WardTest
+ru/nsu/karabut/logoworld/commands/MoveTest.java
+ ru.nsu.karabut.logoworld.commands.MoveTest
+ru/nsu/karabut/logoworld/commands/JumpTest.java
+ ru.nsu.karabut.logoworld.commands.JumpTest
+ru/nsu/karabut/logoworld/commands/CommandInitializerTest.java
+ ru.nsu.karabut.logoworld.commands.CommandInitializerTest
+ru/nsu/karabut/logoworld/commands/TeleportTest.java
+ ru.nsu.karabut.logoworld.commands.TeleportTest

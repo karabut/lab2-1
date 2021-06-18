@@ -8,16 +8,12 @@ public class Main {
         logger.debug("Startup...");
         try {
             String program = null;
-            boolean useSwing = false;
 
             if (args.length >= 1) {
                 program = args[0];
             }
-            if (args.length >= 2) {
-                useSwing = args[1].equals("--swing");
-            }
 
-            LogoWorld logoWorld = new LogoWorld(program, useSwing);
+            LogoWorld logoWorld = new LogoWorld(program);
             logoWorld.run();
         }
         catch (Exception e) {

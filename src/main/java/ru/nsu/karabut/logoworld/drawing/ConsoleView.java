@@ -7,7 +7,7 @@ import ru.nsu.karabut.logoworld.math.Pair;
 
 import java.util.Scanner;
 
-public class ConsoleView implements GraphicsView{
+public class ConsoleView {
 
     private static final Logger logger = Logger.getLogger(ConsoleView.class);
 
@@ -22,9 +22,9 @@ public class ConsoleView implements GraphicsView{
     public ConsoleView() throws RenderException {
         logger.debug("Console View initialization.");
         scanner = new Scanner(System.in);
-        backgroundTexture = new Texture(" ", "");
-        executorTexture = new Texture("@", "");
-        drawingTexture = new Texture("#", "");
+        backgroundTexture = new Texture(" ");
+        executorTexture = new Texture("@");
+        drawingTexture = new Texture("#");
     }
 
     public void writeInformation(String info) {

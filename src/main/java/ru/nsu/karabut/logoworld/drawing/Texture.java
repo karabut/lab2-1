@@ -5,17 +5,14 @@ import ru.nsu.karabut.logoworld.exceptions.RenderException;
 public class Texture {
     private final int size;
     private final String texture;
-    private String color;
 
     /**
-     * Creates texture with given {@code String} representation and color.
+     * Creates texture with given {@code String} representation.
      * @param texture string representation of texture
-     * @param color string representation of color in console
      * @throws RenderException if texture string length was not a square of integer number
      */
-    public Texture(String texture, String color) throws RenderException {
+    public Texture(String texture) throws RenderException {
         this.texture = texture;
-        this.color = color;
         this.size = (int) Math.sqrt(texture.length());
         if (this.size * this.size != texture.length()) {
             throw new RenderException("Texture size was not a square of integer number");

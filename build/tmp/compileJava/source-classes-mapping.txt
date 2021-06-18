@@ -1,5 +1,5 @@
-ru/nsu/karabut/logoworld/drawing/Texture.java
- ru.nsu.karabut.logoworld.drawing.Texture
+ru/nsu/karabut/logoworld/logic/Mover.java
+ ru.nsu.karabut.logoworld.logic.Mover
 ru/nsu/karabut/logoworld/exceptions/RenderException.java
  ru.nsu.karabut.logoworld.exceptions.RenderException
 ru/nsu/karabut/logoworld/input/Input.java
@@ -32,8 +32,8 @@ ru/nsu/karabut/logoworld/commands/Move.java
  ru.nsu.karabut.logoworld.commands.Move
 ru/nsu/karabut/logoworld/commands/CommandFactory.java
  ru.nsu.karabut.logoworld.commands.CommandFactory
-ru/nsu/karabut/logoworld/commands/Jump.java
- ru.nsu.karabut.logoworld.commands.Jump
+ru/nsu/karabut/logoworld/drawing/ConsoleView.java
+ ru.nsu.karabut.logoworld.drawing.ConsoleView
 ru/nsu/karabut/logoworld/commands/Draw.java
  ru.nsu.karabut.logoworld.commands.Draw
 ru/nsu/karabut/logoworld/commands/Ward.java
@@ -46,7 +46,5 @@ ru/nsu/karabut/logoworld/logic/World.java
  ru.nsu.karabut.logoworld.logic.World
 ru/nsu/karabut/logoworld/math/Direction.java
  ru.nsu.karabut.logoworld.math.Direction
-ru/nsu/karabut/logoworld/logic/Mover.java
- ru.nsu.karabut.logoworld.logic.Mover
-ru/nsu/karabut/logoworld/drawing/ConsoleView.java
- ru.nsu.karabut.logoworld.drawing.ConsoleView
+ru/nsu/karabut/logoworld/drawing/Texture.java
+ ru.nsu.karabut.logoworld.drawing.Texture
